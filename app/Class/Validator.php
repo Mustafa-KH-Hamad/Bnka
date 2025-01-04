@@ -1,4 +1,5 @@
 <?php 
+namespace App\Class;
 class Validator{
 
     public function email($email){

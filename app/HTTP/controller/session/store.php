@@ -1,4 +1,7 @@
 <?php 
+
+use App\Class\Validator;
+
 $db = dbreturn();
 
 $email = $_POST['email'];

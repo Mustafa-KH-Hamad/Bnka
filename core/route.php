@@ -1,6 +1,7 @@
 <?php
+use App\Class\Router;
 // require "Router.php";
-$controller = 'app/HTTP/controller'; 
+$controller = '../app/HTTP/controller'; 
 $routes = new Router();
 $routes->get("/", "$controller/index.php");
 $routes->get("/class", "$controller/class.php");

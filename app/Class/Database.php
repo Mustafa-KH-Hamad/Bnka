@@ -1,5 +1,6 @@
 <?php
-
+namespace App\Class;
+use PDO;
 class Database {
     protected $pdo ; 
     protected $statement;

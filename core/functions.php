@@ -1,6 +1,6 @@
 <?php
 
-const BASE_PATH_VIEW = __DIR__ . '/app/view/';
+const BASE_PATH_VIEW = __DIR__ . '/../app/view/';
 function dd($value){
     echo "<pre>";
     var_dump($value);

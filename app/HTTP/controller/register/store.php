@@ -1,5 +1,7 @@
 <?php 
 
+use App\Class\Validator;
+
 $db = dbreturn();
 
 $name = $_POST['name'];
