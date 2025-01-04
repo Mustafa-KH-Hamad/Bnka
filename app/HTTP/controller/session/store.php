@@ -1,8 +1,7 @@
 <?php 
 
 use App\Class\Validator;
-
-$db = dbreturn();
+use App\Class\Authenticator;
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -31,17 +30,9 @@ foreach ($validate as $valid){
 if(!($validator->email($email) && $validator->password($password,8,100))) {
     $errors[] = "Invalid email or password </br> please password must be between 8 and 100 characters";
 }
-if (empty($errors)) {
-    $user = $db->query('Select * from users where email=?',[$email])->fetch();
 
-    if($user){
-        if(password_verify( $password,$user['password'])){
-            $_SESSION['email'] = $email;
-            view("index.view.php");
-            return;
-        }
-        $errors[] = "Invalid email or password";
-    }
+if (empty($errors)) {
+    $errors[] =(new Authenticator)->attempt($email, $password);
 }
 
 

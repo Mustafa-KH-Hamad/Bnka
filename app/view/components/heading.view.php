@@ -48,19 +48,19 @@
       </div>
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
         <div class="flex space-x-4">
-          <a href="/session" class="<?= $_SERVER['REQUEST_URI'] == '/session' ? 'rounded-md bg-gray-900 text-white' : '' ?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">login</a>
-          <a href="/register" class="<?= $_SERVER['REQUEST_URI'] == '/register' ? 'rounded-md bg-gray-900 text-white' : '' ?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">register</a>
-        </div>  
-      <!-- Profile dropdown -->
-        <div class="relative ml-3">
-          <div>
-            <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-              <span class="absolute -inset-1.5"></span>
-              <span class="sr-only">Open user menu</span>
-              <img class="size-8 rounded-full" src="resources/images/bnka.png" alt="">
-            </button>
-          </div>
-        </div>
+          <?php if ($_SESSION['logged'] ?? false): ?>
+
+            <form action="/session" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+              <button type="submit" class="rounded-md  text-red px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">logout</button>
+            </form>
+            <img class="h-10 w-auto rounded-md" src="resources/images/bnka.png" alt="">
+            
+            <?php else: ?>
+            <a href="/session" class="<?= $_SERVER['REQUEST_URI'] == '/session' ? 'rounded-md bg-gray-900 text-white' : '' ?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">login</a>
+            <a href="/register" class="<?= $_SERVER['REQUEST_URI'] == '/register' ? 'rounded-md bg-gray-900 text-white' : '' ?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">register</a>
+          <?php endif; ?>
+        </div> 
       </div>
     </div>
   </div>

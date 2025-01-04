@@ -17,6 +17,11 @@ function view($path, $data = []){
     require BASE_PATH_VIEW . $path; 
 }
 
+function redirect($path){
+    header("Location: $path");
+    exit();
+}
+
 function abort ($code = 404) {
     require BASE_PATH_VIEW . "{$code}.view.php";
     die();

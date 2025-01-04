@@ -1,8 +1,11 @@
 <?php 
 namespace App\Class;
+
 class Router {
 
     protected $routes = [];
+    protected $method = [];
+
 
     public function add($path,$controller,$method){
         $this->routes[] = [
@@ -34,14 +37,15 @@ class Router {
     }
 
     public function routes(){
+
+        $this->method = $_POST['_method'] ?? $_SERVER["REQUEST_METHOD"];
         foreach ($this->routes as $route) {
             if ((parse_url($_SERVER['REQUEST_URI'])['path'] == $route['path']) &&
-            $_SERVER["REQUEST_METHOD"] == $route['method']){
+                $this->method == $route['method']){
                 require $route['controller'];
                 exit;
             }
         }
-        abort(); 
-       
+        abort();  
     }
 }
