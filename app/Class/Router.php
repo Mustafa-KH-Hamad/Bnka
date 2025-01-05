@@ -7,12 +7,14 @@ class Router {
     protected $method = [];
 
 
-    public function add($path,$controller,$method){
+    public function add($path,$controller,$method ){
         $this->routes[] = [
             'path' => $path,
             'controller' => $controller,
-            'method' => strtoupper($method)
+            'method' => strtoupper($method),
+            'middleware' => null
         ];
+        return $this ;
     }
 
     public function get($path,$controller){
@@ -36,12 +38,18 @@ class Router {
         return $this;
     }
 
+    public function only($key){
+        $this->routes[array_key_last($this->routes)]['middleware'] = $key;
+        return $this; 
+    }
+
     public function routes(){
 
         $this->method = $_POST['_method'] ?? $_SERVER["REQUEST_METHOD"];
         foreach ($this->routes as $route) {
             if ((parse_url($_SERVER['REQUEST_URI'])['path'] == $route['path']) &&
                 $this->method == $route['method']){
+                    dd($this->routes);
                 require $route['controller'];
                 exit;
             }

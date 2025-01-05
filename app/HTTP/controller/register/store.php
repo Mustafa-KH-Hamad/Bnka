@@ -43,8 +43,7 @@ if(!($validator->email($email) && $validator->password($password,8,100))) {
 
 if (empty($errors)) {
     $db->query('INSERT INTO `users`(`name`, `email`, `password`) VALUES (?,?,?)',[$name,$email,password_hash($password,PASSWORD_DEFAULT)]);
-    view("index.view.php");
-    return; 
+    redirect("/session");
 }
 
 

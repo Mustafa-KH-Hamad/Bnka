@@ -20,6 +20,8 @@ class Authenticator{
 
             if(password_verify( $password,$user['password'])){
                 Session::put('email',$email);
+                Session::put('name',$user['name']);
+                Session::put('is_admin',$user['is_admin']);
                 Session::put('logged',true);
                 redirect('/');
                 exit;
