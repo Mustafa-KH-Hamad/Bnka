@@ -19,6 +19,13 @@ view("/components/heading.view.php");
       </div>
 
       <div>
+        <label for="DOB" class="block text-sm/6 font-medium text-gray-900">Date of Birth</label>
+        <div class="mt-2">
+          <input type="date" name="DOB" id="DOB" autocomplete="DOB" value="<?= $DOB ?? '' ?>" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+        </div>
+      </div>
+
+      <div>
         <label for="email" class="block text-sm/6 font-medium text-gray-900">Email address</label>
         <div class="mt-2">
           <input type="email" name="email" id="email" autocomplete="email" value="<?= $email ?? '' ?>" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">

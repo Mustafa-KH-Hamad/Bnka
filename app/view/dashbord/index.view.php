@@ -7,8 +7,10 @@ view('components/heading.view.php');
         <thead>
             <tr class="bg-gray-800 text-white">
                 <th class="px-4 py-2">ID</th>
+                <th class="px-4 py-2">classes_id</th>
                 <th class="px-4 py-2">Name</th>
                 <th class="px-4 py-2">Email</th>
+                <th class="px-4 py-2">DOB</th>
                 <th class="px-4 py-2">Is Admin</th>
             </tr>
         </thead>
@@ -22,12 +24,22 @@ view('components/heading.view.php');
                     </td>
                     <td class="px-4 py-2">
                         <a href="/show?id=<?= $user['id'] ?>">
+                            <?= ($user['classes_id'] ?? 'N/A') ?>
+                        </a>
+                    </td>
+                    <td class="px-4 py-2">
+                        <a href="/show?id=<?= $user['id'] ?>">
                             <?= htmlspecialchars($user['name']); ?>
                         </a>
                     </td>
                     <td class="px-4 py-2">
                         <a href="/show?id=<?= $user['id'] ?>">
                             <?= htmlspecialchars($user['email']); ?>
+                        </a>
+                    </td>
+                    <td class="px-4 py-2">
+                        <a href="/show?id=<?= $user['id'] ?>">
+                            <?= htmlspecialchars($user['DOB']); ?>
                         </a>
                     </td>
                     <td class="px-4 py-2">
