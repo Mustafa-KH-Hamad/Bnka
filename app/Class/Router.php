@@ -1,5 +1,6 @@
 <?php 
 namespace App\Class;
+use App\Class\Middleware\Middleware;
 
 class Router {
 
@@ -49,7 +50,7 @@ class Router {
         foreach ($this->routes as $route) {
             if ((parse_url($_SERVER['REQUEST_URI'])['path'] == $route['path']) &&
                 $this->method == $route['method']){
-                    dd($this->routes);
+                Middleware::middleware($route['middleware']);
                 require $route['controller'];
                 exit;
             }
