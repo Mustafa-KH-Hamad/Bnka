@@ -2,6 +2,7 @@
 
 use App\Class\Session;
 use App\Class\Validator;
+use App\Class\ClassesModification;
 
 $db = dbreturn();
 
@@ -25,6 +26,7 @@ if (Session::flash('errors', (new Validator)->exist([
     exit;
 };
 
+
 $updateUsers = $db->query('Update users set classes_id=:classes_id,name=:name,DOB=:DOB,is_admin=:is_admin where id=:id',[
     ':classes_id'=>$classes_id,
     ':name'=>$name,
@@ -32,5 +34,7 @@ $updateUsers = $db->query('Update users set classes_id=:classes_id,name=:name,DO
     ':is_admin'=>$is_admin,
     ':id'=>$id
 ])->fetch();
+
+
 
 redirect('/dashbord');

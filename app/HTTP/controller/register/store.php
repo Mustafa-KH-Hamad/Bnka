@@ -1,14 +1,18 @@
 <?php 
 
 use App\Class\Validator;
+use App\Class\ClassesModification;
 
 $db = dbreturn();
+
 
 $name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $DOB = $_POST['DOB'];
 $errors = [];
+
+//todo adding a class to put users accordingly 
 
 //todo try to fix the null returning of the exist so that it can be refactored the problem is that the exist function returns null when 
 //all datas are available and the implode cannot work with null values :) 
@@ -52,6 +56,7 @@ if (empty($errors)) {
         $DOB
     ]
 );
+
     redirect("/session");
 }
 

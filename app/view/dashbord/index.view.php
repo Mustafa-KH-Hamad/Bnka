@@ -1,9 +1,17 @@
 <?php 
 view('components/heading.view.php');
 ?>
-<div class="container mx-auto mt-10">
+<div class="container mx-auto mb-10">
+    <div class="flex justify-between mb-4">
     <h1 class="text-2xl font-bold mb-5">User Dashboard</h1>
-    <table class="table-auto w-full bg-white shadow-md rounded-lg pb-5">
+    <form action="/dashbord" method="POST">
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            Distribute Users BY thier Date Of Birth
+        </button>
+    </div>
+    </form>
+    <div >
+    <table class="table-auto w-full bg-white shadow-md rounded-lg pb-5 mb-5">
         <thead>
             <tr class="bg-gray-800 text-white">
                 <th class="px-4 py-2">ID</th>
@@ -14,7 +22,7 @@ view('components/heading.view.php');
                 <th class="px-4 py-2">Is Admin</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody >
             <?php foreach ($users as $user): ?>
                 <tr class="text-center border-b">
                     <td class="px-4 py-2">
@@ -51,7 +59,9 @@ view('components/heading.view.php');
             <?php endforeach; ?>
         </tbody>
     </table>
+    </div>
 </div>
+<div class="mt-5">‎ </div>
 <?php 
 view('components/footer.view.php'); 
 ?>

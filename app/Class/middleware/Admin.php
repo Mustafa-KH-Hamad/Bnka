@@ -7,7 +7,7 @@ class Admin
     public function handle()
     {
         if (!isset($_SESSION['is_admin'])) {
-            header('Location: /');
+            header('Location: /session');
             exit;
         }
     }
