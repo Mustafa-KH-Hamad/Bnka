@@ -2,8 +2,13 @@
 
 $db = dbreturn();
 
-$classes = $db->query('SELECT * FROM users group by classes_id')->fetchAll();
+$classes = $db->query('SELECT classes_id, GROUP_CONCAT(id) AS user_ids, GROUP_CONCAT(name) AS user_names
+    FROM users
+    GROUP BY classes_id')->fetchAll();
 
-dd($classes);
-
-view('classes/index.view.php');
+$teachers_name = $db->query('Select * from classes')->fetchAll();
+view('classes/index.view.php',
+[
+    'classes' => $classes,
+    'teachers_name' => $teachers_name
+]);
