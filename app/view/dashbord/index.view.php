@@ -26,32 +26,32 @@ view('components/heading.view.php');
             <?php foreach ($users as $user): ?>
                 <tr class="text-center border-b">
                     <td class="px-4 py-2">
-                        <a href="/show?id=<?= $user['id'] ?>">
+                        <a href="/dashbord/show?id=<?= $user['id'] ?>">
                             <?= $user['id'] ?>
                         </a>
                     </td>
                     <td class="px-4 py-2">
-                        <a href="/show?id=<?= $user['id'] ?>">
+                        <a href="/dashbord/show?id=<?= $user['id'] ?>">
                             <?= ($user['classes_id'] ?? 'N/A') ?>
                         </a>
                     </td>
                     <td class="px-4 py-2">
-                        <a href="/show?id=<?= $user['id'] ?>">
+                        <a href="/dashbord/show?id=<?= $user['id'] ?>">
                             <?= htmlspecialchars($user['name']); ?>
                         </a>
                     </td>
                     <td class="px-4 py-2">
-                        <a href="/show?id=<?= $user['id'] ?>">
+                        <a href="/dashbord/show?id=<?= $user['id'] ?>">
                             <?= htmlspecialchars($user['email']); ?>
                         </a>
                     </td>
                     <td class="px-4 py-2">
-                        <a href="/show?id=<?= $user['id'] ?>">
+                        <a href="/dashbord/show?id=<?= $user['id'] ?>">
                             <?= htmlspecialchars($user['DOB']); ?>
                         </a>
                     </td>
                     <td class="px-4 py-2">
-                        <a href="/show?id=<?= $user['id'] ?>">
+                        <a href="/dashbord/show?id=<?= $user['id'] ?>">
                             <?= $user['is_admin'] ? 'Yes' : 'No'; ?>
                         </a>
                     </td>

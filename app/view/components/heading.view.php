@@ -6,7 +6,7 @@
     <title>BNKA</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="h-full">
+<body class="h-full"> 
 <nav class="bg-gray-800">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
@@ -35,7 +35,7 @@
       </div>
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
         <div class="flex shrink-0 items-center">
-           <img class="h-10 w-auto rounded-md" src="resources/images/bnka.png" alt="bnka logo">
+           <img class="h-10 w-auto rounded-md" src="<?= RESOURCES ?>/images/bnka.png" alt="bnka logo">
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">

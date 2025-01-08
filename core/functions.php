@@ -1,6 +1,7 @@
 <?php
 
 const BASE_PATH_VIEW = __DIR__ . '/../app/view/';
+const RESOURCES = '/resources';
 function dd($value){
     echo "<pre>";
     var_dump($value);
@@ -29,4 +30,7 @@ function abort ($code = 404) {
 
 function old($value){
     return $value ?? '';
+}
+function resources(){
+    return RESOURCES;
 }

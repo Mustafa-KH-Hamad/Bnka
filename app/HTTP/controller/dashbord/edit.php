@@ -2,7 +2,6 @@
 
 use App\Class\Session;
 use App\Class\Validator;
-use App\Class\ClassesModification;
 
 $db = dbreturn();
 
@@ -21,8 +20,9 @@ if (Session::flash('errors', (new Validator)->exist([
     'name' => $name,
     'DOB' => $DOB    
     ]
-    )) ){
-    redirect('/show?id='.$id);
+    )) )
+    {
+    redirect('/dashbord/show?id='.$id);
     exit;
 };
 

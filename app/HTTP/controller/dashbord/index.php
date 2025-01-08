@@ -1,7 +1,7 @@
 <?php
 
 $db = dbreturn();
-$users = $db->query('Select * from users')->fetchAll();
+$users = $db->query('Select * from users order by DOB desc')->fetchAll();
 
 $classes = $db->query('Select * from classes')->fetchAll();
 
