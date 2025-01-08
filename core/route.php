@@ -30,4 +30,4 @@ $routes->post('/dashbord', "$controller/dashbord/distribute.php")->only('admin')
 $routes->delete('/dashbord', "$controller/dashbord/destroy.php")->only('admin');
 $routes->get('/dashbord/show', "$controller/dashbord/show.php")->only('admin'); 
 
-
+$routes->get('/search', "$controller/search.php");

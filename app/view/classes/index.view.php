@@ -22,11 +22,11 @@ view("components/heading.view.php");
 
 <?php endif; ?>
 <!-- search bar  -->
-<form action="#" method="GET">
+<form action="/search" method="GET">
 <div class="flex justify-center items-center my-6">
     <div class="relative w-96">
         <!-- Search Bar Input -->
-        <input type="text" placeholder="Search..." class="w-full p-3 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="text" name="q" placeholder="Search..." class="w-full p-3 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
         <!-- Search Icon -->
         <svg class="absolute left-3 top-3 w-5 h-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
