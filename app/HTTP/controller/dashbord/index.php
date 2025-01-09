@@ -1,12 +1,25 @@
 <?php
 
 $db = dbreturn();
-$users = $db->query('Select * from users order by DOB desc')->fetchAll();
 
-$classes = $db->query('Select * from classes')->fetchAll();
+$recordsPerPage = 15;
 
-view('/dashbord/index.view.php',[
-    'users'=>$users,
-    'classes'=>$classes
-    ]
-);
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+$offset = ($page - 1) * $recordsPerPage;
+
+$users = $db->query(
+    "SELECT * FROM users ORDER BY DOB DESC LIMIT $offset, $recordsPerPage"
+)->fetchAll();
+
+$classes = $db->query('SELECT * FROM classes')->fetchAll();
+
+$totalUsers = $db->query('SELECT COUNT(*) as count FROM users')->fetch()['count'];
+$totalPages = ceil($totalUsers / $recordsPerPage);
+
+view('/dashbord/index.view.php', [
+    'users' => $users,
+    'classes' => $classes,
+    'totalPages' => $totalPages,
+    'currentPage' => $page,
+]);

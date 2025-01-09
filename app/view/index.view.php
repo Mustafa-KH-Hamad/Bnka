@@ -12,7 +12,7 @@ require "components/heading.view.php";
     <p class="text-xl mb-2">Salam Alaikum </p>
     <p class="text-xl mb-2">Welcome to our page</p>
     <p class="text-xl mb-2">Feel free to browse through our website</p>
-    <a href="/class" class="mt-3 text-xl font-bold border border-black rounded-md px-4 py-2 bg-gray-800 text-white hover:bg-white hover:text-black">Browse class</a>
+    <a href="/classes" class="mt-3 text-xl font-bold border border-black rounded-md px-4 py-2 bg-gray-800 text-white hover:bg-white hover:text-black">Browse class</a>
 </div>
 
 

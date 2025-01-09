@@ -61,6 +61,32 @@ view('components/heading.view.php');
     </table>
     </div>
 </div>
+<div class="mt-6 flex justify-center items-center space-x-2">
+    <?php if ($currentPage > 1): ?>
+        <a 
+            href="/dashbord?page=<?= $currentPage - 1; ?>" 
+            class="px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition duration-200">
+            Previous
+        </a>
+    <?php endif; ?>
+
+    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+        <a 
+            href="/dashbord?page=<?= $i; ?>" 
+            class="px-4 py-2 <?= $currentPage === $i ? 'bg-blue-700 text-white' : 'bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white' ?> font-bold rounded transition duration-200">
+            <?= $i; ?>
+        </a>
+    <?php endfor; ?>
+
+    <?php if ($currentPage < $totalPages): ?>
+        <a 
+            href="/dashbord?page=<?= $currentPage + 1; ?>" 
+            class="px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition duration-200">
+            Next
+        </a>
+    <?php endif; ?>
+</div>
+
 <div class="mt-5">‎ </div>
 <?php 
 view('components/footer.view.php'); 

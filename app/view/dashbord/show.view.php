@@ -6,7 +6,17 @@ view('components/heading.view.php');
 ?>
 
 <div class="container mx-auto mt-10">
+    <div class="mb-5">
+        <button
+            onclick="window.history.back()"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-200"
+        >
+            Go Back
+        </button>
+    </div>
+
     <h1 class="text-2xl font-bold mb-5">User Details</h1>
+
     <!-- User Details Form -->
     <form action="/dashbord" method="POST" class="bg-white shadow-md rounded-lg px-8 py-6">
         <input type="hidden" name="_method" value="PATCH">
@@ -21,8 +31,6 @@ view('components/heading.view.php');
                     </option>
                 <?php endforeach; ?>
             </select>
-
-
         </div>
 
         <div class="mb-4">
@@ -51,7 +59,6 @@ view('components/heading.view.php');
                 value="<?= htmlspecialchars($user['DOB']); ?>"
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
         </div>
-
 
         <div class="mb-4">
             <label for="is_admin" class="block text-gray-700 text-sm font-bold mb-2">Role (Is Admin):</label>
@@ -96,6 +103,7 @@ view('components/heading.view.php');
         </button>
     </form>
 </div>
+<div class="mt-5">‎ </div>
 
 <?php
 view('components/footer.view.php');

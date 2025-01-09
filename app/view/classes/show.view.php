@@ -1,7 +1,14 @@
-<?php 
+<?php
 view("/components/heading.view.php");
-
 ?>
+
+<div class="mb-5">
+  <button
+    onclick="window.history.back()"
+    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-200">
+    Go Back
+  </button>
+</div>
 
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -26,15 +33,17 @@ view("/components/heading.view.php");
         </div>
       </div>
 
-      
+
       <div>
         <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add class</button>
       </div>
     </form>
     <p class="mt-5 text-red-500 text-center">
-      <?php 
-      if(!empty($errors))
-        foreach($errors as $error) { echo '<br>'.$error . '</br>' ?? '</br>'; } 
+      <?php
+      if (!empty($errors))
+        foreach ($errors as $error) {
+          echo '<br>' . $error . '</br>' ?? '</br>';
+        }
       ?>
     </p>
   </div>
