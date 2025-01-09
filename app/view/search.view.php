@@ -5,6 +5,14 @@ use App\Class\Session;
 view('components/heading.view.php');
 ?>
 
+<div class="mb-5">
+    <button
+        onclick="window.history.back()"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-200">
+        Go Back
+    </button>
+</div>
+
 <?php if (empty($classes)) : ?>
     <h2 class="text-2xl font-semibold text-gray-700 mb-2">
         No Users found

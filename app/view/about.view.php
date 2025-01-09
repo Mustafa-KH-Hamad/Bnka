@@ -26,7 +26,7 @@ require "components/heading.view.php";
         </a>
     </div>
 
-    <a href="/class" class="mt-3 text-xl font-bold border border-black rounded-md px-4 py-2 bg-gray-800 text-white hover:bg-white hover:text-black">
+    <a href="/classes" class="mt-3 text-xl font-bold border border-black rounded-md px-4 py-2 bg-gray-800 text-white hover:bg-white hover:text-black">
         Browse class
     </a>
 
